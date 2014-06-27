@@ -49,6 +49,7 @@
     NSLog(@"MOC fetch failure message: %@", message);        
   }
   
+    NSLog(@"About to check for Null Plugin Results!");
   [datasetView checkForNullPluginResults];
   
   [moc save:&error];

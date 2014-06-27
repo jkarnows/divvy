@@ -27,6 +27,11 @@
 		0D9C41AB13FD05DA00E59675 /* DivvyTSNE.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9C41AA13FD05DA00E59675 /* DivvyTSNE.xib */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* DivvyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* DivvyAppDelegate.m */; };
+		6DAFD276195E1C970046582F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F1514F5692C00C7AF52 /* Cocoa.framework */; };
+		6DAFD281195E1D050046582F /* DivvyJeremy.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DAFD258195E16710046582F /* DivvyJeremy.xib */; };
+		6DAFD282195E1D560046582F /* DivvyJeremy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFD256195E16710046582F /* DivvyJeremy.m */; };
+		6DAFD283195E1D560046582F /* DivvyJeremy.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFD257195E16710046582F /* DivvyJeremy.xcdatamodel */; };
+		6DAFD284195E1D560046582F /* DivvyJeremyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFD25A195E16710046582F /* DivvyJeremyController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -135,6 +140,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0D86ADE51428990F00877901;
 			remoteInfo = DivvyIsomap;
+		};
+		6DAFD285195E1D6E0046582F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DAFD274195E1C970046582F;
+			remoteInfo = DivvyJeremy;
 		};
 		D704B6A913E088B1002692E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -252,6 +264,15 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		6DAFD254195E16710046582F /* DivvyJeremy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DivvyJeremy-Info.plist"; path = "Plugins/Reducers/Jeremy/DivvyJeremy-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6DAFD255195E16710046582F /* DivvyJeremy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DivvyJeremy.h; path = Plugins/Reducers/Jeremy/DivvyJeremy.h; sourceTree = SOURCE_ROOT; };
+		6DAFD256195E16710046582F /* DivvyJeremy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DivvyJeremy.m; path = Plugins/Reducers/Jeremy/DivvyJeremy.m; sourceTree = SOURCE_ROOT; };
+		6DAFD257195E16710046582F /* DivvyJeremy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = DivvyJeremy.xcdatamodel; path = Plugins/Reducers/Jeremy/DivvyJeremy.xcdatamodel; sourceTree = SOURCE_ROOT; };
+		6DAFD258195E16710046582F /* DivvyJeremy.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DivvyJeremy.xib; path = Plugins/Reducers/Jeremy/DivvyJeremy.xib; sourceTree = SOURCE_ROOT; };
+		6DAFD259195E16710046582F /* DivvyJeremyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DivvyJeremyController.h; path = Plugins/Reducers/Jeremy/DivvyJeremyController.h; sourceTree = SOURCE_ROOT; };
+		6DAFD25A195E16710046582F /* DivvyJeremyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DivvyJeremyController.m; path = Plugins/Reducers/Jeremy/DivvyJeremyController.m; sourceTree = SOURCE_ROOT; };
+		6DAFD275195E1C970046582F /* DivvyJeremy.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivvyJeremy.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DEC2ADA195DDDDA0025F6AD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Divvy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Divvy-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Divvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Divvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D704B69913E08829002692E9 /* DivvyScatterPlot.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DivvyScatterPlot.xcdatamodel; sourceTree = "<group>"; };
@@ -404,6 +425,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DAFD272195E1C970046582F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DAFD276195E1C970046582F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,6 +570,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DEC2ADA195DDDDA0025F6AD /* Accelerate.framework */,
 				D7DD8B6C137C9D6700DADC35 /* Quartz.framework */,
 				D77DF783118636A2009C1946 /* Accelerate.framework */,
 				D72E1D0D116FC6F8000D3D95 /* OpenGL.framework */,
@@ -577,6 +607,7 @@
 				0D86ADF31428990F00877901 /* DivvyIsomap.plugin */,
 				D792E59314292C120084626A /* DivvyNilPointVisualizer.plugin */,
 				D7C00F1414F5692C00C7AF52 /* DivvyImage.plugin */,
+				6DAFD275195E1C970046582F /* DivvyJeremy.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,6 +666,21 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DAFD24A195E14E60046582F /* DivvyJeremy */ = {
+			isa = PBXGroup;
+			children = (
+				6DAFD254195E16710046582F /* DivvyJeremy-Info.plist */,
+				6DAFD255195E16710046582F /* DivvyJeremy.h */,
+				6DAFD256195E16710046582F /* DivvyJeremy.m */,
+				6DAFD257195E16710046582F /* DivvyJeremy.xcdatamodel */,
+				6DAFD258195E16710046582F /* DivvyJeremy.xib */,
+				6DAFD259195E16710046582F /* DivvyJeremyController.h */,
+				6DAFD25A195E16710046582F /* DivvyJeremyController.m */,
+			);
+			name = DivvyJeremy;
+			path = Jeremy;
 			sourceTree = "<group>";
 		};
 		D704B87E13E1ED13002692E9 /* NilClusterer */ = {
@@ -760,6 +806,7 @@
 		D7642A6913F4EE7C00F1CE56 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
+				6DAFD24A195E14E60046582F /* DivvyJeremy */,
 				D7A24D9413F32053001AD337 /* NilReducer */,
 				D730D24813B5276C00E01F31 /* PCA */,
 				0D9C418513FCFFE100E59675 /* TSNE */,
@@ -932,6 +979,23 @@
 			productReference = 0D9C419113FD007100E59675 /* DivvyTSNE.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		6DAFD274195E1C970046582F /* DivvyJeremy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DAFD27E195E1C980046582F /* Build configuration list for PBXNativeTarget "DivvyJeremy" */;
+			buildPhases = (
+				6DAFD271195E1C970046582F /* Sources */,
+				6DAFD272195E1C970046582F /* Frameworks */,
+				6DAFD273195E1C970046582F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DivvyJeremy;
+			productName = DivvyJeremy;
+			productReference = 6DAFD275195E1C970046582F /* DivvyJeremy.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8D1107260486CEB800E47090 /* Divvy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Divvy" */;
@@ -955,6 +1019,7 @@
 				D7A250F81402F7E2001AD337 /* PBXTargetDependency */,
 				D792E59A14292C1E0084626A /* PBXTargetDependency */,
 				D7C00F2614F56A3800C7AF52 /* PBXTargetDependency */,
+				6DAFD286195E1D6E0046582F /* PBXTargetDependency */,
 			);
 			name = Divvy;
 			productInstallPath = "$(HOME)/Applications";
@@ -1134,6 +1199,7 @@
 				0D86ADE51428990F00877901 /* DivvyIsomap */,
 				D792E59214292C120084626A /* DivvyNilPointVisualizer */,
 				D7C00F1314F5692C00C7AF52 /* DivvyImage */,
+				6DAFD274195E1C970046582F /* DivvyJeremy */,
 			);
 		};
 /* End PBXProject section */
@@ -1160,6 +1226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D9C41AB13FD05DA00E59675 /* DivvyTSNE.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DAFD273195E1C970046582F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DAFD281195E1D050046582F /* DivvyJeremy.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,6 +1364,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DAFD271195E1C970046582F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DAFD282195E1D560046582F /* DivvyJeremy.m in Sources */,
+				6DAFD283195E1D560046582F /* DivvyJeremy.xcdatamodel in Sources */,
+				6DAFD284195E1D560046582F /* DivvyJeremyController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1405,6 +1489,11 @@
 			isa = PBXTargetDependency;
 			target = 0D86ADE51428990F00877901 /* DivvyIsomap */;
 			targetProxy = 0DC7D5741461AB52001D57BF /* PBXContainerItemProxy */;
+		};
+		6DAFD286195E1D6E0046582F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DAFD274195E1C970046582F /* DivvyJeremy */;
+			targetProxy = 6DAFD285195E1D6E0046582F /* PBXContainerItemProxy */;
 		};
 		D704B6AA13E088B1002692E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1649,6 +1738,52 @@
 			};
 			name = Release;
 		};
+		6DAFD27F195E1C980046582F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Core/Divvy_prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "Plugins/Reducers/Jeremy/DivvyJeremy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		6DAFD280195E1C980046582F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Core/Divvy_prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "Plugins/Reducers/Jeremy/DivvyJeremy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1697,7 +1832,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -1707,7 +1842,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1716,7 +1850,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -1724,7 +1858,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -2180,6 +2313,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6DAFD27E195E1C980046582F /* Build configuration list for PBXNativeTarget "DivvyJeremy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DAFD27F195E1C980046582F /* Debug */,
+				6DAFD280195E1C980046582F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Divvy" */ = {
 			isa = XCConfigurationList;

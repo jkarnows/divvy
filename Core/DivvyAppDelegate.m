@@ -71,6 +71,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
 #pragma mark Handle application-wide messages
 - (void) reloadDatasetView:(DivvyDatasetView *)datasetView {
   [datasetView setProcessingImage];
+    
+    
   
   NSError *error = nil;
   [self.managedObjectContext save:&error]; // Save any changes to the persistent store
@@ -79,6 +81,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
                          [error description], ([error userInfo] ? [[error userInfo] description] : @"no user info")];
     NSLog(@"MOC save failure message (delegate): %@", message);        
   }
+    
+    
   
   NSManagedObjectID *datasetViewID = datasetView.objectID;
   DivvyDatasetViewOperation *datasetViewOperation = [[DivvyDatasetViewOperation alloc] initWithObjectID:datasetViewID];
@@ -90,6 +94,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
       op.completionBlock = nil;
       [datasetViewOperation addDependency:op];
     }
+    
+    
   
   // Reload the DatasetView image in main thread once processing is complete.
   [datasetViewOperation setCompletionBlock:^{
@@ -107,6 +113,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
       [self.datasetWindowController.datasetViewsBrowser reloadData];
     });
   }];
+    
+    
   
   [operationQueue addOperation:datasetViewOperation];
   [datasetViewOperation release];
@@ -484,6 +492,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
   //[operationQueue setMaxConcurrentOperationCount:24] // Base this on number of cores/threads per core?
   
   version = [NSNumber numberWithInt:0];
+    
+
   
   return self;
 }
@@ -499,6 +509,7 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
   self.datasetsPanelController = datasetWindow.datasetsPanel;
   self.datasetViewPanelController = datasetWindow.datasetViewPanel;
   [datasetWindow release];
+    
   
   // Load popover (not present on 10.6)
   if([NSPopover class]) {
@@ -514,12 +525,21 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
   NSFetchRequest *datasetViewRequest = [[[NSFetchRequest alloc] init] autorelease];
   [datasetViewRequest setEntity:datasetViewEntityDescription];
   NSArray *datasetViewArray = [self.managedObjectContext executeFetchRequest:datasetViewRequest error:&error];
-  
+
+    
   // Fetch the dataset views and start drawing them
   for (DivvyDatasetView *datasetView in datasetViewArray) {
     [datasetView updatePlugins]; // Check if there are any new plugins since last time Divvy launched
+      
+//      NSLog(@"%@",datasetView.selectedPointVisualizer);
+//      NSLog(@"%@",datasetView.selectedDatasetVisualizer);
+//      NSLog(@"%@",datasetView.selectedClusterer);
+//      NSLog(@"%@",datasetView.selectedReducer);
+      
     [self reloadDatasetView:datasetView];
   }
+    
+    
   
   [self.datasetViewPanelController loadPluginViewControllers];
   
@@ -542,6 +562,8 @@ NSString * const kDivvyDefaultReducer = @"NilReducer";
     self.selectedDatasets = self.delegateSettings.selectedDatasets;
   else
     [self.datasetViewPanelController reflow];
+    
+    
   
 }
 

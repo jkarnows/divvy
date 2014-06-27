@@ -117,6 +117,7 @@
 #pragma mark -
 #pragma mark Plugin management
 - (void) createPlugins {
+    
   // Could be cleaned up a bit
   DivvyAppDelegate *delegate = [NSApp delegate];
   NSManagedObjectContext* moc = self.managedObjectContext;
@@ -165,8 +166,19 @@
   NSManagedObjectContext* moc = delegate.managedObjectContext;
   NSManagedObjectModel* mom = delegate.managedObjectModel;
   NSArray *pluginTypes = delegate.pluginTypes;
+    
+    NSLog(@"Update Plugin!");
+    NSLog(@"%@",selectedPointVisualizer);
+    NSLog(@"%@",selectedDatasetVisualizer);
+    NSLog(@"%@",selectedClusterer);
+    NSLog(@"%@",selectedReducer);
   
   NSMutableArray *pointLocations = [self.pointLocations mutableCopy];
+    
+//    NSLog(@"%@",selectedPointVisualizer);
+//    NSLog(@"%@",selectedDatasetVisualizer);
+//    NSLog(@"%@",selectedClusterer);
+//    NSLog(@"%@",selectedReducer);
   
   for(NSString *pluginType in pluginTypes) {
     NSMutableArray *plugins = [self valueForKey:[NSString stringWithFormat:@"%@s", pluginType]];
@@ -196,8 +208,14 @@
             [pointLocations addObject:[NSNull null]];
         }
       }
+      
     self.pointLocations = pointLocations;
   }
+    
+//    NSLog(@"%@",selectedPointVisualizer);
+//    NSLog(@"%@",selectedDatasetVisualizer);
+//    NSLog(@"%@",selectedClusterer);
+//    NSLog(@"%@",selectedReducer);
 }
 
 #pragma mark -
@@ -208,16 +226,37 @@
   // Make this a (constant?) member of DatasetView so we don't have to recalculate it every time
   NSArray *pluginTypes = [[NSArray alloc] initWithObjects:kDivvyClusterer, kDivvyReducer, kDivvyDatasetVisualizer, kDivvyPointVisualizer, nil];
   
+    //NSLog(@"%@",selectedPointVisualizer);
+    //NSLog(@"%@",selectedDatasetVisualizer);
+    //NSLog(@"%@",selectedClusterer);
+    //NSLog(@"%@",selectedReducer);
+    //NSLog(@"%@",pluginTypes);
+    
   for(NSString *pluginType in pluginTypes) {
+      //NSLog(@"%@",pluginType);
+      
     NSArray *plugins = [self valueForKey:[NSString stringWithFormat:@"%@s", pluginType]];
+      NSLog(@"%@",plugins);
+      
     NSArray *pluginResults = [self valueForKey:[NSString stringWithFormat:@"%@Results", pluginType]];
+      //NSLog(@"%@",pluginResults);     // Outputs long entries that are probably the locations (?)
+      
     id <DivvyPlugin> selectedPlugin = [self valueForKey:[NSString stringWithFormat:@"selected%@%@", 
                                            [[pluginType substringToIndex:1] capitalizedString], 
                                            [pluginType substringFromIndex:1]]];
-    
+      //NSLog(@"%@",[pluginType substringToIndex:1]);
+      //NSLog(@"%@",[[pluginType substringToIndex:1] capitalizedString]);
+      //NSLog(@"%@",[pluginType substringFromIndex:1]);
+      // The three lines above are strings that are combined together to make the string in next line
+      //NSLog(@"%@",[NSString stringWithFormat:@"selected%@%@", [[pluginType substringToIndex:1] capitalizedString], [pluginType substringFromIndex:1]]);
+      //NSLog(@"%@",plugins);
+      //NSLog(@"Selected Plugin: %@",selectedPlugin);
+      
     int index = [plugins indexOfObject:selectedPlugin];
+      //NSLog(@"Index: %@",index);
     
     id result = [pluginResults objectAtIndex:index];
+      //NSLog(@"Result: %@",result);
     
     if(result == [NSNull null]) {
       SEL pluginUpdate = NSSelectorFromString([NSString stringWithFormat:@"%@Update", pluginType]);
@@ -252,6 +291,8 @@
 
 - (void) reducerChanged {
   int reducerIndex = [self.reducers indexOfObject:self.selectedReducer];  
+    NSLog(@"Reducer Changed!");
+    NSLog(@"%@",reducerIndex);
   NSMutableArray *results = [self.reducerResults mutableCopy];
   [results replaceObjectAtIndex:reducerIndex withObject:[NSNull null]];
   self.reducerResults = results;
@@ -356,6 +397,8 @@
 
 - (void) reducerUpdate {
   int reducerIndex = [self.reducers indexOfObject:self.selectedReducer];
+    NSLog(@"Reducer Updated!");
+    //NSLog(@"%@",reducerIndex);
   
   [self.selectedReducer calculateD:self.dataset];
   
@@ -463,28 +506,43 @@
   NSError *error = nil;
   
   NSArray *pluginTypes = [delegate pluginTypes];
+    //NSLog(@"Plugin Types: %@",pluginTypes);
   
   for(NSString *pluginType in pluginTypes) {
+      //NSLog(@"Plugin Type: %@",pluginType);
+      
     [self setValue:[NSMutableArray array] forKey:[NSString stringWithFormat:@"%@s", pluginType]];
     
     NSMutableArray *plugins = [self valueForKey:[NSString stringWithFormat:@"%@s", pluginType]];
+      //NSLog(@"Plugins: %@",plugins);
     
     NSArray *pluginIDs = [self valueForKey:[NSString stringWithFormat:@"%@IDs", pluginType]];
+      //NSLog(@"Plugin IDs: %@",pluginIDs);
     
     NSString *pluginIDString = [NSString stringWithFormat:@"%@ID", pluginType];
+      //NSLog(@"Plugin ID String: %@",pluginIDString);
     NSString *selectedPluginString = [NSString stringWithFormat:@"selected%@%@", 
                                       [[pluginType substringToIndex:1] capitalizedString], 
                                       [pluginType substringFromIndex:1]];
+      //NSLog(@"Selected Plugin String: %@",selectedPluginString);
     
     NSString *selectedPluginIDString = [NSString stringWithFormat:@"selected%@%@ID", 
                                         [[pluginType substringToIndex:1] capitalizedString], 
                                         [pluginType substringFromIndex:1]];
+      //NSLog(@"Selected Plugin ID String: %@",selectedPluginIDString);
     
     for(NSString *anID in pluginIDs)
+        //NSLog(@"anID: %@",anID);
+        
       for(NSEntityDescription *anEntityDescription in mom.entities) {
+          //NSLog(@"Entity Description: %@",anEntityDescription);
+          
         if([anEntityDescription.propertiesByName objectForKey:pluginIDString]) {
           NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
           NSPredicate *idPredicate = [NSPredicate predicateWithFormat:@"(%K LIKE %@)", pluginIDString, anID];
+            
+            //NSLog(@"Request: %@",request);
+            //NSLog(@"idPredicat: %@",idPredicate);
           
           [request setEntity:anEntityDescription];
           [request setPredicate:idPredicate];
@@ -520,6 +578,8 @@
 - (void) setSelectedReducer:(id <DivvyReducer>)aReducer {
   self.selectedReducerID = aReducer.reducerID;
   selectedReducer = aReducer;
+    NSLog(@"Set Selected Reducer!");
+    NSLog(@"%@",selectedReducer);
 }
 
 - (void) setDataset:(DivvyDataset *)newDataset {

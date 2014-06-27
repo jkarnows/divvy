@@ -55,7 +55,7 @@
 //  coordinate with the point visualizer.
 @property (nonatomic, retain) NSArray *pointLocations;
 
-//  Refernces to the actual plugin objects
+//  References to the actual plugin objects
 @property (nonatomic, retain) NSMutableArray *datasetVisualizers;
 @property (nonatomic, retain) NSMutableArray *pointVisualizers;
 @property (nonatomic, retain) NSMutableArray *clusterers;
